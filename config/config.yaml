@@ -1,0 +1,47 @@
+# 交易标的
+symbol: "SPY.US"
+
+# 策略参数
+strategy:
+  short_ma_period: 5
+  long_ma_period: 20
+  
+# 交易参数
+trading:
+  order_type: "Limit"   # Market | Limit
+  position_ratio: 1.0   # 仓位比例
+  
+# 订单执行配置
+order_execution:
+  strategy: "limit"           # market | limit
+  timing: "open"             # open | intraday
+  
+  limit_order:
+    buy_slippage_pct: 0.3    # 买入允许滑点 %
+    sell_slippage_pct: 0.3   # 卖出允许滑点 %
+    timeout_minutes: 30       # 超时时间
+    chase_on_timeout: true    # 超时是否追单
+    
+  gap_protection:
+    enabled: true
+    max_gap_pct: 2.0         # 最大跳空容忍度 %
+    action_on_gap: "wait"    # wait | cancel
+
+# 风控参数
+risk:
+  stop_loss_pct: null   # 止损百分比，null表示不启用
+  take_profit_pct: null # 止盈百分比
+  max_drawdown_pct: null # 最大回撤限制
+  
+# Longport API配置 (建议使用环境变量引用)
+longport:
+  app_key: "${LONGPORT_APP_KEY}"
+  app_secret: "${LONGPORT_APP_SECRET}"
+  access_token: "${LONGPORT_ACCESS_TOKEN}"
+  
+# 通知配置
+notification:
+  enabled: true
+  channels:
+    - type: "email"
+      recipient: "${EMAIL_RECIPIENT}"

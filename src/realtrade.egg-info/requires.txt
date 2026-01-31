@@ -1,0 +1,13 @@
+longport>=1.0.0
+click>=8.1.0
+rich>=13.0.0
+pandas>=1.5.0
+numpy>=1.23.0
+pyyaml>=6.0
+apscheduler>=3.10.0
+python-dotenv>=1.0.0
+plotext>=5.2.0
+
+[dev]
+pytest>=7.0.0
+pytest-cov>=4.0.0

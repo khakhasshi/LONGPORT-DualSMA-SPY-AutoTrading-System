@@ -1,0 +1,29 @@
+[project]
+name = "DualSMA-SPY-AutoTrading-System"
+version = "0.1.0"
+description = "SPY 双均线自动化交易系统"
+requires-python = ">=3.9"
+dependencies = [
+    "longport>=1.0.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pandas>=1.5.0",
+    "numpy>=1.23.0",
+    "pyyaml>=6.0",
+    "apscheduler>=3.10.0",
+    "python-dotenv>=1.0.0",
+    "plotext>=5.2.0",
+]
+
+[project.scripts]
+realtrade = "src.cli.main:cli"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

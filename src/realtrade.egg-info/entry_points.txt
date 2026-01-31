@@ -1,0 +1,2 @@
+[console_scripts]
+realtrade = src.cli.main:cli
